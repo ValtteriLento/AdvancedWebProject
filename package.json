@@ -1,0 +1,24 @@
+{
+  "name": "advancedwebproject",
+  "version": "1.0.0",
+  "description": "Project work for Advanced Web Applications course",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev:client": "cd client && npm start",
+    "dev:server": "cd server && npm run dev",
+    "preinstall": "cd server && npm install",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValtteriLento/AdvancedWebProject.git"
+  },
+  "author": "Valtteri Lento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValtteriLento/AdvancedWebProject/issues"
+  },
+  "homepage": "https://github.com/ValtteriLento/AdvancedWebProject#readme"
+}
