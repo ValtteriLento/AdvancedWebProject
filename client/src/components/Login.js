@@ -6,7 +6,7 @@ function Login({setJwt, jwt, setUser}) {
     const submit = (e) => {
         e.preventDefault()
 
-        fetch("/users/login", {
+        fetch("/api/users/login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

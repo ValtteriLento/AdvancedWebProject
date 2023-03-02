@@ -6,7 +6,7 @@ function Register() {
     const submit = (e) => {
         e.preventDefault()
 
-        fetch("/users/register", {
+        fetch("/api/users/register", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

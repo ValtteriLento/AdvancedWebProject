@@ -74,7 +74,7 @@ router.post('/register',
                             },
                             (err, ok) => {
                                 if(err) throw err;
-                                return res.send("ok");
+                                return res.send({message: "ok"});
                             }
                         );
                     });

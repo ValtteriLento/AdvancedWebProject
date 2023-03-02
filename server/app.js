@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.resolve("..", "client", "build")));
