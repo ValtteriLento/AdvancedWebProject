@@ -1,10 +1,10 @@
+import Button from '@mui/material/Button';
 import { useState } from 'react'
 
 function Login({setJwt, jwt, setUser}) {
     const [userData, setUserData] = useState({})
 
-    const submit = (e) => {
-        e.preventDefault()
+    const submit = () => {
 
         fetch("/api/users/login", {
             method: "POST",
@@ -31,11 +31,11 @@ function Login({setJwt, jwt, setUser}) {
     return (
         <div>
             <h2>Login</h2>
-            <form onSubmit={submit} onChange={handleChange}>
+            <form onChange={handleChange}>
                 <input id="username" type="text"></input>
                 <input id="password" type="password"></input>
-                <input id="submit" type="submit"></input>
             </form>
+            <Button variant="contained" color="success" onClick={()=> submit()}>Submit</Button>
         </div>
     )
 }
