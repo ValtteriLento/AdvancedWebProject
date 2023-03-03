@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 function Login({setJwt, jwt, setUser}) {
     const [userData, setUserData] = useState({})
