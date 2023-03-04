@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const validateToken = require("../auth/validateToken.js");
 const multer = require("multer");
 const storage = multer.memoryStorage();
-const upload = multer({storage})
+const upload = multer({storage});
 
 
 /* POST login user. */

@@ -1,6 +1,7 @@
 import './App.css';
 import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react';
+import { Buffer } from 'buffer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Index from './components/Index';
@@ -18,10 +19,11 @@ function App() {
         setUser({})
     }
 
-    //Gets jwt from localstorage if page is refreshed
+    //Checks if there is a jwt available and sets jwt and user when page is loaded
     useEffect (() => {
         if(window.localStorage.getItem('jwt')) {
             setJwt(window.localStorage.getItem('jwt'));
+            setUser(JSON.parse(Buffer.from(window.localStorage.getItem('jwt').split(".")[1], "base64").toString()))
         }
     }, []);
 
