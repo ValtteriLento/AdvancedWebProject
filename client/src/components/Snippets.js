@@ -1,4 +1,7 @@
 import Button from '@mui/material/Button';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,15 +16,15 @@ function Snippets() {
     }, [])
 
     return (
-        <div>
+        <List>
             {snippets.map((snippet) => (
-                <p key={snippet._id}>
+                <ListItem key={snippet._id}>
                     <Button component={Link} to={"/snippet/" + snippet.topic}>{snippet.topic} by {snippet.user}</Button>
-                    {snippet.code}
-                </p>
+                    <ListItemText>{snippet.code}</ListItemText>
+                </ListItem>
                 
             ))}
-        </div>
+        </List>
     )
 }
 

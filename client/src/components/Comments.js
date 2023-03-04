@@ -1,3 +1,6 @@
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -13,13 +16,13 @@ function Comments() {
     }, [topic])
 
     return (
-        <div>
+        <List>
             {comments.map((comment) => (
-                <p key={comment._id}>
-                    {comment.user}: {comment.comment}
-                </p>
+                <ListItem key={comment._id}>
+                    <ListItemText>{comment.user}: {comment.comment}</ListItemText>
+                </ListItem>
             ))}
-        </div>
+        </List>
     )
 }
 

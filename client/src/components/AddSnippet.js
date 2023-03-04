@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { useState } from 'react'
 
 function AddSnippet({user}) {
@@ -24,9 +26,9 @@ function AddSnippet({user}) {
     return (
         <div>
             <form onSubmit={submit} onChange={handleChange}>
-                <input id="topic" type="string" placeholder="Topic for your code"></input>
-                <textarea id="code" type="string" placeholder="Your code"></textarea>
-                <input id="submit" type="submit"></input>
+                <TextField variant="outlined" color="success" id="topic" type="string" label="Topic for your code"></TextField>
+                <TextField variant="outlined" color="success" id="code" type="string" label="Your code"></TextField>
+                <Button variant="contained" color="success" type="submit">Post</Button>
             </form>
         </div>
     )

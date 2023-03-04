@@ -7,7 +7,7 @@ import React, { Suspense } from 'react';
 function Header() {
 
     return (
-        <AppBar position="static">
+        <AppBar color="success" position="static">
             <Toolbar>
                 <Button color="inherit" component={Link} to="/">Home</Button>
                 <Button color="inherit" component={Link} to="/login">User</Button>

@@ -1,10 +1,12 @@
 import Button from '@mui/material/Button';
+import Input from '@mui/material/Input';
 import { useState } from 'react';
 
 function Register() {
     const [userData, setUserData] = useState({})
 
-    const submit = () => {
+    const submit = (e) => {
+        e.preventDefault()
 
         fetch("/api/users/register", {
             method: "POST",
@@ -24,11 +26,11 @@ function Register() {
     return (
         <div>
             <h2>Register</h2>
-            <form onChange={handleChange}>
-                <input id="username" type="string" placeholder="username"></input>
-                <input id="password" type="password" placeholder="password"></input>
+            <form onSubmit={submit} onChange={handleChange}>
+                <Input color="success" id="username" type="string" placeholder="username"></Input>
+                <Input color="success" id="password" type="password" placeholder="password"></Input>
+                <Button variant="contained" color="success" type="submit" >Submit</Button>
             </form>
-            <Button variant="contained" color="success" onClick={()=> submit()}>Submit</Button>
         </div>
     )
 }

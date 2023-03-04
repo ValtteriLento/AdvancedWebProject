@@ -32,7 +32,7 @@ router.get('/:topic', (req, res, next) => {
 router.post('/', (req, res, next) => {
     Snippet.findOne({topic: req.body.topic}, (err, topic) => {
         if(err) throw err;
-        if(!topic) {
+        if(!topic && req.body.topic && req.body.code) {
             new Snippet({
                 user: req.body.user,
                 topic: req.body.topic,
@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
                 return res.send(req.body);
             });
         } else {
-            return res.status(403).send("Already has that topic!");
+            return res.status(403).send("Invalid post!");
         }
     });
 });
@@ -70,6 +70,8 @@ router.post('/comments', (req, res, next) => {
             if(err) return next(err);
             return res.send(req.body);
         });
+    } else {
+        return res.status(403).send("Invalid post!");
     }
 });
 
