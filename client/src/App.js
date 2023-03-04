@@ -14,13 +14,13 @@ function App() {
     const [jwt, setJwt] = useState("")
     const [user, setUser] = useState({})
 
-    //Sets jwt and user to default values
+    /* Sets jwt and user to default values */
     const logout = () => {
         setJwt("")
         setUser({})
     }
 
-    //Checks if there is a jwt available and sets jwt and user when page is loaded
+    /* Checks if there is a jwt available and sets jwt and user when page is loaded */
     useEffect (() => {
         if(window.localStorage.getItem('jwt')) {
             setJwt(window.localStorage.getItem('jwt'));
@@ -28,7 +28,7 @@ function App() {
         }
     }, []);
 
-    //Stores jwt to localstorage for persistent login
+    /* Stores jwt to localstorage for persistent login */
     useEffect (() => { 
         window.localStorage.setItem('jwt', jwt);
     }, [jwt]);
@@ -44,7 +44,7 @@ function App() {
                         <Login setJwt={setJwt} setUser={setUser} jwt={jwt} /> :
                         <Button variant="contained" color="error" onClick={()=> logout()}>Logout</Button>}/>
                     <Route path="/register" element={!jwt ? <Register /> : "Logout to register a new account"}/>
-                    <Route path="/snippet/:topic" element={ <Snippet /> } />
+                    <Route path="/snippet/:topic" element={ <Snippet user={user} /> } />
                     <Route path="*" element={ <NotFound /> }/>
                 </Routes>
             </div>

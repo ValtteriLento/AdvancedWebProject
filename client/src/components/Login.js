@@ -33,8 +33,8 @@ function Login({setJwt, jwt, setUser}) {
         <div>
             <h2>Login</h2>
             <form onChange={handleChange}>
-                <input id="username" type="text"></input>
-                <input id="password" type="password"></input>
+                <input id="username" type="text" placeholder="username"></input>
+                <input id="password" type="password" placeholder="password"></input>
             </form>
             <Button variant="contained" color="success" onClick={()=> submit()}>Submit</Button>
         </div>

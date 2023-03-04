@@ -6,7 +6,7 @@ function Index({jwt, user}) {
     return (
         <div>
             <h1>Home</h1>
-            <h2>{jwt ? "Post your snippet" : "Login to post and comment"}</h2>
+            <h2>{jwt ? "Post your snippet" : "Login to post snippets"}</h2>
             {jwt ? <AddSnippet user={user} /> : ""}
             <h2>Code snippets</h2>
             <Snippets />
