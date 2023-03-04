@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Snippets() {
     const [snippets, setSnippets] = useState([])
 
-    //Gets snippets from database
+    //Gets all snippets from database
     useEffect (() => {
         fetch("/api/snippets")
             .then(response => response.json())

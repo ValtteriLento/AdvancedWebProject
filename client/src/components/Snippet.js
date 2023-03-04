@@ -5,6 +5,7 @@ function Snippet() {
     const {topic} = useParams();
     const [snippet, setSnippet] = useState([]);
 
+    //Gets one snippet by topic from database
     useEffect(() => {
         fetch("/api/snippets/" + topic)
             .then(response => response.json())
