@@ -43,7 +43,7 @@ function App() {
                     <Route path="/login" element={!jwt ? 
                         <Login setJwt={setJwt} setUser={setUser} jwt={jwt} /> :
                         <Button variant="contained" color="error" onClick={()=> logout()}>Logout</Button>}/>
-                    <Route path="/register" element={!jwt ? <Register /> : "Logout to register a new account"}/>
+                    <Route path="/register" element={!jwt ? <Register /> : <h3>Logout to register a new account</h3>}/>
                     <Route path="/snippet/:topic" element={ <Snippet user={user} /> } />
                     <Route path="*" element={ <NotFound /> }/>
                 </Routes>

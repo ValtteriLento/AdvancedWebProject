@@ -19,10 +19,12 @@ function Snippets() {
         <List>
             {snippets.map((snippet) => (
                 <ListItem key={snippet._id}>
-                    <Button component={Link} to={"/snippet/" + snippet.topic}>{snippet.topic} by {snippet.user}</Button>
-                    <ListItemText>{snippet.code}</ListItemText>
+                    <ListItemText>
+                        <Button color="success" component={Link} to={"/snippet/" + snippet.topic}>{snippet.topic}</Button>
+                        <h5>posted by {snippet.user}</h5>
+                        <p>{snippet.code}</p>
+                    </ListItemText>
                 </ListItem>
-                
             ))}
         </List>
     )
