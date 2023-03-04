@@ -3,7 +3,7 @@ var router = express.Router();
 const mongoose = require("mongoose");
 const Snippet = require("../models/Snippet");
 
-/* GET snippets. */
+/* GET all snippets. */
 router.get('/', (req, res, next) => {
     Snippet.find({}, (err, snippets) => {
         if(err) return next(err);
@@ -14,6 +14,18 @@ router.get('/', (req, res, next) => {
         }
     });
 });
+
+/* GET one snippet */
+router.get('/:topic', (req, res, next) => {
+    Snippet.findOne({topic: req.params.topic}, (err, snippet) => {
+        if(err) return next(err);
+        if(snippet) {
+            return res.json(snippet);
+        } else {
+            return res.status(404).send("Snippet not found");
+        }
+    })
+})
 
 /* POST snippet. */
 router.post('/', (req, res, next) => {

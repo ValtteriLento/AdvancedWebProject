@@ -8,6 +8,7 @@ import Index from './components/Index';
 import Register from './components/Register';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
+import Snippet from './components/Snippet';
 
 function App() {
     const [jwt, setJwt] = useState("")
@@ -36,13 +37,14 @@ function App() {
         <Router>
             <div className="App">
                 <Header />
-                <h2>{jwt ? `Welcome ${user.username}!` : "Login to post and comment"}</h2>
+                <h2>{jwt ? `Welcome ${user.username}!` : ""}</h2>
                 <Routes>
                     <Route path="/" element={ <Index jwt={jwt} user={user} /> }/>
                     <Route path="/login" element={!jwt ? 
                         <Login setJwt={setJwt} setUser={setUser} jwt={jwt} /> :
                         <Button variant="contained" color="error" onClick={()=> logout()}>Logout</Button>}/>
                     <Route path="/register" element={!jwt ? <Register /> : "Logout to register a new account"}/>
+                    <Route path="/snippet/:topic" element={ <Snippet /> } />
                     <Route path="*" element={ <NotFound /> }/>
                 </Routes>
             </div>

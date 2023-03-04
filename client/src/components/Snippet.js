@@ -1,24 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function Snippet() {
-    const [snippets, setSnippets] = useState([])
+    const {topic} = useParams();
+    const [snippet, setSnippet] = useState([]);
 
-    //Gets snippets from database
-    useEffect (() => {
-        fetch("/api/snippets")
+    useEffect(() => {
+        fetch("/api/snippets/" + topic)
             .then(response => response.json())
-            .then(json => setSnippets(json))
-    }, [])
+            .then(json => setSnippet(json))
+    }, [topic])
 
     return (
         <div>
-            {snippets.map((snippet) => (
-                <p key={snippet._id}>
-                    <h3>{snippet.topic} by {snippet.user}</h3>
-                    {snippet.code}
-                </p>
-                
-            ))}
+            <h3>{snippet.topic} by {snippet.user}</h3>
+            <p>{snippet.code}</p>
         </div>
     )
 }
