@@ -38,7 +38,7 @@ function App() {
                 <Header />
                 <h2>{jwt ? `Welcome ${user.username}!` : "Login to post and comment"}</h2>
                 <Routes>
-                    <Route path="/" element={ <Index /> }/>
+                    <Route path="/" element={ <Index jwt={jwt} user={user} /> }/>
                     <Route path="/login" element={!jwt ? 
                         <Login setJwt={setJwt} setUser={setUser} jwt={jwt} /> :
                         <Button variant="contained" color="error" onClick={()=> logout()}>Logout</Button>}/>

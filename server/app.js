@@ -7,7 +7,7 @@ var logger = require('morgan');
 const mongoose = require("mongoose");
 var cors = require('cors');
 
-var indexRouter = require('./routes/index');
+var snippetRouter = require('./routes/snippets');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', indexRouter);
+app.use('/api/snippets', snippetRouter);
 app.use('/api/users', usersRouter);
 
 if (process.env.NODE_ENV === "production") {
