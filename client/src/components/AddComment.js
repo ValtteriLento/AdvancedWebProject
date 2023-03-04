@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react'
@@ -24,12 +25,12 @@ function AddComment({user, topic}) {
     }
 
     return (
-        <div>
-            <form onSubmit={submit} onChange={handleChange}>
+        <Box>
+            <Box align="left" component="form" onSubmit={submit} onChange={handleChange}>
                 <TextField variant="outlined" color="success" id="comment" type="string" label="Your comment"></TextField>
                 <Button variant="contained" color="success" type="submit">Post</Button>
-            </form>
-        </div>
+            </Box>
+        </Box>
     )
 }
 

@@ -1,3 +1,5 @@
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Input from '@mui/material/Input';
 import { useState } from 'react';
@@ -32,14 +34,14 @@ function Login({setJwt, jwt, setUser}) {
     }
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={submit} onChange={handleChange}>
+        <Box>
+            <Typography variant="h4">Login</Typography>
+            <Box component="form" onSubmit={submit} onChange={handleChange}>
                 <Input color="success" id="username" type="text" placeholder="username"></Input>
                 <Input color="success" id="password" type="password" placeholder="password"></Input>
                 <Button variant="contained" color="success" type="submit">Submit</Button>
-            </form>
-        </div>
+            </Box>
+        </Box>
     )
 }
 

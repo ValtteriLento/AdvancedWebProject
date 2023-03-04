@@ -1,4 +1,6 @@
 import './App.css';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react';
 import { Buffer } from 'buffer';
@@ -35,19 +37,19 @@ function App() {
 
     return (
         <Router>
-            <div className="App">
+            <Box className="App">
                 <Header />
-                <h2>{jwt ? `Welcome ${user.username}!` : ""}</h2>
+                <Typography variant="h2">{jwt ? `Welcome ${user.username}!` : ""}</Typography>
                 <Routes>
                     <Route path="/" element={ <Index jwt={jwt} user={user} /> }/>
                     <Route path="/login" element={!jwt ? 
                         <Login setJwt={setJwt} setUser={setUser} jwt={jwt} /> :
                         <Button variant="contained" color="error" onClick={()=> logout()}>Logout</Button>}/>
-                    <Route path="/register" element={!jwt ? <Register /> : <h3>Logout to register a new account</h3>}/>
+                    <Route path="/register" element={!jwt ? <Register /> : <Typography variant="h4">Logout to register a new account</Typography>}/>
                     <Route path="/snippet/:topic" element={ <Snippet user={user} /> } />
                     <Route path="*" element={ <NotFound /> }/>
                 </Routes>
-            </div>
+            </Box>
         </Router>
   );
 }

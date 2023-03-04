@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react'
@@ -24,13 +25,13 @@ function AddSnippet({user}) {
     }
 
     return (
-        <div>
-            <form onSubmit={submit} onChange={handleChange}>
+        <Box>
+            <Box component="form" onSubmit={submit} onChange={handleChange}>
                 <TextField variant="outlined" color="success" id="topic" type="string" label="Topic for your code"></TextField>
                 <TextField variant="outlined" color="success" id="code" type="string" label="Your code"></TextField>
                 <Button variant="contained" color="success" type="submit">Post</Button>
-            </form>
-        </div>
+            </Box>
+        </Box>
     )
 }
 

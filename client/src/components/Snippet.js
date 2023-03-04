@@ -1,6 +1,5 @@
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import AddComment from './AddComment';
@@ -18,18 +17,14 @@ function Snippet({user}) {
     }, [topic])
 
     return (
-        <List>
-            <ListItem>
-                <ListItemText>
-                    <h2>{snippet.topic}</h2>
-                    <h5>posted by {snippet.user}</h5>
-                    <p>{snippet.code}</p>
-                    {user.username ? <AddComment topic={snippet.topic} user={user} /> : <h2>Login to post comments</h2>}
-                    <h2>Comments</h2>
-                    <Comments />
-                </ListItemText>
-            </ListItem>
-        </List>
+        <Box>
+            <Typography align="left" variant="h4">{snippet.topic}</Typography>
+            <Typography align="left" variant="h6">posted by {snippet.user}</Typography>
+            <Typography align="left">{snippet.code}</Typography>
+            <Typography align="left" variant="h4">Comments</Typography>
+            <Comments />
+            {user.username ? <AddComment topic={snippet.topic} user={user} /> : <Typography variant="h5">Login to post comments</Typography>}
+        </Box>
     )
 }
 
