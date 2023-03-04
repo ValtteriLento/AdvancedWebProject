@@ -17,18 +17,19 @@ router.get('/', (req, res, next) => {
 
 /* POST snippet. */
 router.post('/', (req, res, next) => {
-    Snippet.findOne({code: req.body.code}, (err, code) => {
+    Snippet.findOne({topic: req.body.topic}, (err, topic) => {
         if(err) throw err;
-        if(!code) {
+        if(!topic) {
             new Snippet({
                 user: req.body.user,
+                topic: req.body.topic,
                 code: req.body.code
             }).save((err) => {
                 if(err) return next(err);
                 return res.send(req.body);
             });
         } else {
-            return res.status(403).send("Already has that code!");
+            return res.status(403).send("Already has that topic!");
         }
     });
 });

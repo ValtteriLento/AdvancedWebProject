@@ -24,7 +24,8 @@ function AddSnippet({user}) {
     return (
         <div>
             <form onSubmit={submit} onChange={handleChange}>
-                <textarea id="code" type="string"></textarea>
+                <input id="topic" type="string" placeholder="Topic for your code"></input>
+                <textarea id="code" type="string" placeholder="Your code"></textarea>
                 <input id="submit" type="submit"></input>
             </form>
         </div>

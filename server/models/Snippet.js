@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 let snippetSchema = new Schema ({
     user: {type: String},
+    topic: {type: String},
     code: {type: String}
 });
 
