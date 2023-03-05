@@ -6,6 +6,7 @@ import { useState } from 'react'
 function AddSnippet({user}) {
     const [snippetData, setSnippetData] = useState({})
 
+    /* Posts new snippet to database */
     const submit = (e) => {
         e.preventDefault()
 

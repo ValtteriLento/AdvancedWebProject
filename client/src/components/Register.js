@@ -7,6 +7,7 @@ import { useState } from 'react';
 function Register() {
     const [userData, setUserData] = useState({})
 
+    /* Posts new user to database */
     const submit = (e) => {
         e.preventDefault()
 

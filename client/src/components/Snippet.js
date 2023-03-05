@@ -17,13 +17,13 @@ function Snippet({user}) {
     }, [topic])
 
     return (
-        <Box>
+        <Box sx={{padding: 1}}>
             <Typography align="left" variant="h4">{snippet.topic}</Typography>
             <Typography align="left" variant="h6">posted by {snippet.user}</Typography>
             <Typography align="left">{snippet.code}</Typography>
             <Typography align="left" variant="h4">Comments</Typography>
             <Comments />
-            {user.username ? <AddComment topic={snippet.topic} user={user} /> : <Typography variant="h5">Login to post comments</Typography>}
+            {user.username ? <AddComment topic={snippet.topic} user={user} /> : <Typography align="left" variant="h5">Login to post comments</Typography>}
         </Box>
     )
 }

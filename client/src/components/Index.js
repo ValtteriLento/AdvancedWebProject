@@ -6,8 +6,8 @@ import Snippets from './Snippets';
 function Index({jwt, user}) {
 
     return (
-        <Box>
-            <Typography variant="h1">Home</Typography>
+        <Box sx={{padding: 1}}>
+            <Typography variant="h2">Home</Typography>
             <Typography variant="h4">{jwt ? "Post your snippet" : "Login to post snippets"}</Typography>
             {jwt ? <AddSnippet user={user} /> : ""}
             <Typography align="left" variant="h4">Code snippets</Typography>

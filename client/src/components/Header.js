@@ -2,7 +2,6 @@ import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from 'react-router-dom';
-import React, { Suspense } from 'react';
 
 function Header() {
 
@@ -17,10 +16,4 @@ function Header() {
     );
 }
 
-export default function App() {
-    return (
-      <Suspense fallback="loading">
-        <Header />
-      </Suspense>
-    );
-}
+export default Header

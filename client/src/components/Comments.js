@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -19,7 +20,9 @@ function Comments() {
         <List>
             {comments.map((comment) => (
                 <ListItem key={comment._id}>
-                    <ListItemText>{comment.user}: {comment.comment}</ListItemText>
+                    <Box sx={{width: 1, padding: 1, border: '1px solid green'}}>
+                        <ListItemText primary={comment.comment} secondary={"posted by " + comment.user}/>
+                    </Box>
                 </ListItem>
             ))}
         </List>

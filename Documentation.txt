@@ -1,0 +1,77 @@
+# CT30A3204 Advanced Web Applications Project work
+# Valtteri Lento 0510810
+###################################################################################################################
+# Technology choices
+
+    These choices are familiar from the course:
+
+    Backend is done using Node.js and Express
+    Database is done using MongoDB
+    Frontend is done using React
+    Authentication is done with jsonwebtoken which is stored in a state in frontend
+    MaterialUI elements are used in frontend for better User Interface
+    setupProxy.js is used to setup proxy with the server for api calls
+
+    This choice I found from stackoverflow.com:
+
+    Using useEffect() jsonwebtoken is also stored in localstorage
+    With another useEffect() jsonwebtoken is retrieved from localstorage when page is loaded
+
+###################################################################################################################
+# Installation guidelines
+
+
+    Use the following commands in root folder:
+
+    npm run install
+    $env:NODE_ENV="development"; npm run dev:server
+
+    Open another terminal and run
+
+    npm run dev:client
+
+    App will run at http://localhost:3000
+
+    If you want to run both frontend and backend in one terminal
+    use the following commands in root folder:
+
+    npm run build
+    $env:NODE_ENV="production"; npm run dev:server
+
+    Open http://localhost:1234 in a browser
+
+###################################################################################################################
+# User manual
+
+    On the homepage you can see code snippets and by clicking a topic
+    you will get to a page where you can see comments on the topic
+
+    You will have to login to post your snippets or comments
+
+    Start by clicking the register button from top bar
+    This will take you to a page where you can create an account
+    Write your username and password in the input fields and click submit to create your account
+
+    Now click the user button from top bar
+    Write your username and password in the input fields and click submit to login
+    A welcome text and a logout button will appear if your login was successful
+    Clicking the logout button will log you out and you will have to login again to post snippets and comments
+
+    Now when logged in click the home button from top bar to get to homepage
+    You will notice that there are now two textfields for posting snippets
+    Write the topic of your code and your code in the fields and click post button
+    You will see your post on the homepage when you refresh it
+
+    Now click a topic to see its comments
+    There is now a textfield for writing a comments
+    Write your comment on the field and click post button
+    You will see your comment on the page when you refresh it
+
+###################################################################################################################
+# Implemented features
+
+    - Basic features 25 points
+    - Utilization of a frontside framework React 5 points
+    - MaterialUI for better User Interface n points
+
+###################################################################################################################

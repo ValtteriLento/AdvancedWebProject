@@ -6,6 +6,7 @@ import { useState } from 'react'
 function AddComment({user, topic}) {
     const [commentData, setCommentData] = useState({})
 
+    /* Posts new comment to database */
     const submit = (e) => {
         e.preventDefault()
 

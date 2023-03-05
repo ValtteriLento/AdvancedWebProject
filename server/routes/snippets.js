@@ -61,7 +61,7 @@ router.get('/comments/:topic', (req, res, next) => {
 
 /* POST comment to database */
 router.post('/comments', (req, res, next) => {
-    if(req.body.comment) {
+    if(req.body.comment && req.body.topic) {
         new Comment({
             user: req.body.user,
             topic: req.body.topic,

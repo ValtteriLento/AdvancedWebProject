@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const {body, validationResult } = require("express-validator");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const validateToken = require("../auth/validateToken.js");
 const multer = require("multer");
 const storage = multer.memoryStorage();
 const upload = multer({storage});

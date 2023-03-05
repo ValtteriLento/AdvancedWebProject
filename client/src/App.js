@@ -39,7 +39,7 @@ function App() {
         <Router>
             <Box className="App">
                 <Header />
-                <Typography variant="h2">{jwt ? `Welcome ${user.username}!` : ""}</Typography>
+                <Typography variant="h3">{jwt ? `Welcome ${user.username}!` : ""}</Typography>
                 <Routes>
                     <Route path="/" element={ <Index jwt={jwt} user={user} /> }/>
                     <Route path="/login" element={!jwt ? 

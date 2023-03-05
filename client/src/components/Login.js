@@ -8,6 +8,7 @@ import { Buffer } from 'buffer';
 function Login({setJwt, jwt, setUser}) {
     const [userData, setUserData] = useState({})
 
+    /* Posts login information to server */
     const submit = (e) => {
         e.preventDefault()
 
