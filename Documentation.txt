@@ -20,11 +20,10 @@
 ###################################################################################################################
 # Installation guidelines
 
-
     Use the following commands in root folder:
 
     npm run install
-    windows: $env:NODE_ENV="development"; npm run dev:server
+    windows powershell: $env:NODE_ENV="development"; npm run dev:server
     linux: NODE_ENV=development npm run dev:server
 
     Open another terminal and run
@@ -32,15 +31,6 @@
     npm run dev:client
 
     App will run at http://localhost:3000
-
-    If you want to run both frontend and backend in one terminal
-    use the following commands in root folder:
-
-    npm run build
-    windows: $env:NODE_ENV="production"; npm run dev:server
-    linux: NODE_ENV=production npm run dev:server
-
-    Open http://localhost:1234 in a browser
 
 ###################################################################################################################
 # User manual
